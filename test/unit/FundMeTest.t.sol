@@ -98,10 +98,7 @@ contract FundMeTest is Test {
         fundMe.withdraw();
 
         assertEq(address(fundMe).balance, 0);
-        assertEq(
-            address(fundMe.getOwner()).balance,
-            startingOwnerBalance + startingFundMeBalance
-        );
+        assertEq(address(fundMe.getOwner()).balance, startingOwnerBalance + startingFundMeBalance);
     }
 
     receive() external payable {}

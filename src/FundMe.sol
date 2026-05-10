@@ -25,10 +25,7 @@ contract FundMe {
     }
 
     function fund() public payable {
-        require(
-            msg.value.getConversionRate(chainLinkAddress) >= MINIMUM_USD,
-            "You need to spend more ETH!"
-        );
+        require(msg.value.getConversionRate(chainLinkAddress) >= MINIMUM_USD, "You need to spend more ETH!");
 
         if (s_addressToAmountFunded[msg.sender] == 0) {
             s_funders.push(msg.sender);
@@ -38,9 +35,7 @@ contract FundMe {
     }
 
     function getVersion() public view returns (uint256) {
-        AggregatorV3Interface priceFeed = AggregatorV3Interface(
-            chainLinkAddress
-        );
+        AggregatorV3Interface priceFeed = AggregatorV3Interface(chainLinkAddress);
         return priceFeed.version();
     }
 
@@ -53,19 +48,13 @@ contract FundMe {
         uint256 fundersLength = s_funders.length;
         uint256 contractBalance = address(this).balance;
 
-        for (
-            uint256 funderIndex = 0;
-            funderIndex < fundersLength;
-            funderIndex++
-        ) {
+        for (uint256 funderIndex = 0; funderIndex < fundersLength; funderIndex++) {
             address funder = s_funders[funderIndex];
             s_addressToAmountFunded[funder] = 0;
         }
         s_funders = new address[](0);
 
-        (bool callSuccess, ) = payable(msg.sender).call{
-            value: address(this).balance
-        }("");
+        (bool callSuccess,) = payable(msg.sender).call{value: address(this).balance}("");
         require(callSuccess, "Call failed");
         emit Withdrawn(msg.sender, contractBalance);
     }
@@ -91,9 +80,7 @@ contract FundMe {
         return s_funders[index];
     }
 
-    function getAddressToAmountFunded(
-        address funder
-    ) public view returns (uint256) {
+    function getAddressToAmountFunded(address funder) public view returns (uint256) {
         return s_addressToAmountFunded[funder];
     }
 }
