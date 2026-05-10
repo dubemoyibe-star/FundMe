@@ -120,8 +120,6 @@ foundry-fund-me/
    SEPOLIA_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/YOUR_API_KEY
    ETHERSCAN_API_KEY=your_etherscan_api_key
 
-   # Private key of deployment wallet (KEEP SECURE!)
-   PRIVATE_KEY=your_private_key_here
    ```
 
 4. **Build the project**
