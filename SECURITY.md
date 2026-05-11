@@ -249,13 +249,6 @@ When security issues are discovered:
    - Provide support for upgrades
    - Update security knowledge
 
-## Emergency Contacts
-
-For urgent security issues:
-
-- Email: security@fundme.example.com
-- GitHub Security Advisory: [Report](https://github.com/security/advisories)
-
 ## Security Checklist
 
 Before production deployment:
