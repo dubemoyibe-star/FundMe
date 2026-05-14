@@ -44,7 +44,7 @@ Before you start, ensure you have:
 - **MetaMask** or similar wallet for testnet interaction
 - **Alchemy/Infura** account for testnet RPC endpoints
 
-## 🎯 Quick Start (5 minutes)
+##  Quick Start (5 minutes)
 
 ### Step 1: Clone and Install
 
@@ -92,7 +92,7 @@ make deploy-local
 
 ---
 
-## 🏗️ Understanding the Project
+##  Understanding the Project
 
 ### What is FundMe?
 
@@ -372,7 +372,6 @@ make deploy-local
    ```env
    SEPOLIA_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/YOUR_KEY
    ETHERSCAN_API_KEY=your_etherscan_key
-   PRIVATE_KEY=your_wallet_private_key
    ```
 
 3. **Funded Account**
